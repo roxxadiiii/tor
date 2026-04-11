@@ -19,7 +19,7 @@ jobs:
       # 2. Push to Codeberg (HTTPS + token)
       - name: Push to Codeberg
         run: |
-          git remote add codeberg https://$CODEBERG_TOKEN@codeberg.org/roxxadiiii/roxxadiiii.git
+          git remote add codeberg https://$CODEBERG_TOKEN@codeberg.org/roxxadiiii/tor.git
           git push --mirror codeberg || echo "Codeberg push failed"
         env:
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
@@ -37,5 +37,5 @@ jobs:
       # 4. Push to SourceHut (SSH)
       - name: Push to SourceHut
         run: |
-          git remote add sourcehut git@git.sr.ht:~roxxadiiii/roxxadiiii
+          git remote add sourcehut git@git.sr.ht:~roxxadiiii/tor
           git push --mirror sourcehut || echo "SourceHut push failed"
